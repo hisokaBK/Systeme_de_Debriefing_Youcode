@@ -1,0 +1,10 @@
+{
+    "require": {
+        "eftec/bladeone": "^4.19"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        }
+    }
+}

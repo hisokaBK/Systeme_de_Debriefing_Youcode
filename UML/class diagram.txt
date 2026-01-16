@@ -1,0 +1,93 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+
+' ================= ENUM =================
+enum Role {
+  ADMIN
+  TEACHER
+  APPRENANT
+}
+
+enum NiveauMaitrise {
+  IMITER
+  S_ADAPTER
+  TRANSPOSER
+}
+
+' ================= UTILISATEURS =================
+abstract class Utilisateur {
+  - id : int
+  - nom : string
+  - email : string
+  - motDePasse : string
+  - role : Role
+  - actif : boolean
+  - createdAt : datetime
+
+  + seConnecter()
+  + seDeconnecter()
+}
+
+class Admin
+class Teacher
+class Apprenant {
+  - matricule : string
+}
+
+Utilisateur <|-- Admin
+Utilisateur <|-- Teacher
+Utilisateur <|-- Apprenant
+
+' ================= STRUCTURE PEDAGOGIQUE =================
+class Classe {
+  - id : int
+  - nom : string
+  - annee : string
+}
+
+class Sprint {
+  - id : int
+  - nom : string
+  - dateDebut : date
+  - dateFin : date
+  - ordre : int
+}
+
+class Brief {
+  - id : int
+  - titre : string
+  - description : text
+  - dureeEstimee : int
+  - type : string  <<individuel / collectif>>
+}
+
+class Competence {
+  - id : int
+  - code : string
+  - libelle : string
+}
+
+' ================= DEBRIEFING =================
+class Evaluation {
+  - id : int
+  - commentaire : text
+  - niveau : NiveauMaitrise
+  - dateEvaluation : datetime
+}
+
+' ================= RELATIONS =================
+Classe "1" --> "0..*" Sprint : contient
+Sprint "1" --> "1..*" Brief : organise
+Brief "*" --> "*" Competence : cible
+
+Classe "1" --> "0..*" Apprenant : accueille
+Classe "1" --> "0..*" Teacher : encadrée par
+
+Apprenant "1" --> "0..*" Evaluation : reçoit
+Teacher "1" --> "0..*" Evaluation : réalise
+
+Brief "1" --> "0..*" Evaluation : évalué par
+Competence "1" --> "0..*" Evaluation : évaluée dans
+
+@enduml

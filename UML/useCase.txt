@@ -1,0 +1,113 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+skinparam shadowing false
+
+actor Admin
+actor Teacher
+actor Apprenant
+
+rectangle "Système de Débriefing Pédagogique" {
+
+  ' ================= AUTH =================
+  Admin --> (Se connecter)
+  Teacher --> (Se connecter)
+  Apprenant --> (Se connecter)
+
+  Admin --> (Se déconnecter)
+  Teacher --> (Se déconnecter)
+  Apprenant --> (Se déconnecter)
+
+  (Se connecter) ..> (Vérifier identité) : <<include>>
+  (Se connecter) ..> (Vérifier rôle) : <<include>>
+
+  ' ================= ADMIN =================
+  package "Administration" {
+
+    Admin --> (Créer utilisateur)
+    Admin --> (Modifier utilisateur)
+    Admin --> (Supprimer utilisateur)
+    Admin --> (Affecter rôle)
+
+    Admin --> (Créer classe)
+    Admin --> (Modifier classe)
+    Admin --> (Supprimer classe)
+
+    Admin --> (Affecter apprenant à classe)
+    Admin --> (Affecter formateur à classe)
+
+    Admin --> (Créer sprint)
+    Admin --> (Modifier sprint)
+    Admin --> (Définir ordre sprint)
+
+    Admin --> (Créer compétence)
+    Admin --> (Modifier compétence)
+    Admin --> (Supprimer compétence)
+
+    Admin --> (Consulter référentiel niveaux)
+    Admin --> (Consulter statistiques globales)
+  }
+
+  ' ================= TEACHER =================
+  package "Formateur" {
+
+    Teacher --> (Créer brief)
+    Teacher --> (Modifier brief)
+    Teacher --> (Associer compétences au brief)
+    Teacher --> (Associer brief au sprint)
+
+    Teacher --> (Réaliser débriefing pédagogique)
+    Teacher --> (Ajouter commentaire pédagogique)
+
+    Teacher --> (Consulter progression apprenant)
+    Teacher --> (Consulter progression classe)
+    Teacher --> (Consulter historique débriefings)
+    Teacher --> (Filtrer progression)
+  }
+
+  ' ================= APPRENANT =================
+  package "Apprenant" {
+
+    Apprenant --> (Consulter briefs)
+    Apprenant --> (Consulter évaluations)
+    Apprenant --> (Consulter compétences)
+    Apprenant --> (Consulter niveaux atteints)
+    Apprenant --> (Suivre progression)
+    Apprenant --> (Consulter historique personnel)
+    Apprenant --> (Filtrer compétences)
+  }
+
+  ' ========== DÉBRIEFING (CŒUR DU SYSTÈME) ==========
+  (Réaliser débriefing pédagogique) ..> (Sélectionner brief) : <<include>>
+  (Réaliser débriefing pédagogique) ..> (Sélectionner apprenant) : <<include>>
+  (Réaliser débriefing pédagogique) ..> (Charger compétences du brief) : <<include>>
+  (Réaliser débriefing pédagogique) ..> (Évaluer compétence) : <<include>>
+
+  (Évaluer compétence) ..> (Attribuer niveau de maîtrise) : <<include>>
+  (Attribuer niveau de maîtrise) ..> (Enregistrer évaluation) : <<include>>
+
+  (Ajouter commentaire pédagogique) ..> (Réaliser débriefing pédagogique) : <<extend>>
+}
+
+' ================= NOTES MÉTIER =================
+note right of (Attribuer niveau de maîtrise)
+Niveaux obligatoires :
+- IMITER
+- S_ADAPTER
+- TRANSPOSER
+end note
+
+note right of (Affecter apprenant à classe)
+Un apprenant appartient
+à une seule classe
+end note
+
+note bottom of (Réaliser débriefing pédagogique)
+Une évaluation est liée à :
+- Apprenant
+- Brief
+- Compétence
+- Niveau
+end note
+@enduml
