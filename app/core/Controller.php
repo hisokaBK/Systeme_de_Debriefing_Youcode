@@ -1,11 +1,13 @@
 <?php
 
 namespace app\Core;
+use  app\services\ViewService;
 
-class Controller
+abstract class Controller
 {
     protected function view(string $view, array $data = [])
     {
-        require __DIR__ . '/../../resources/views/pages/' . $view . '.php';
+        ViewService::instBlade();
+        ViewService::render($view, $data);
     }
 }

@@ -1,12 +1,10 @@
 <?php  
 
-namespace app\controllers;
+namespace app\Http\controllers;
 use app\core\controller;
 class NotFondController extends controller{
-      public function notFondView(){
-          $this->view('404', [
-            'title' => '404'
-        ]);
+      public function view($v='404',$data=['title' => '404']){
+           parent::view($v,$data);
       }
    }
    

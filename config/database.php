@@ -9,13 +9,13 @@ $pass = $dotenv['DB_PASS'];
 $port = $dotenv['DB_PORT'] ;
 
 return [
-    'driver'  => 'mysql',
+    'driver'  => 'pgsql',
     'host'    => $host,
     'dbname'  => $db,
     'user'    => $user,
     'port'    =>$port,
     'pass'    => $pass,
-    'charset' => 'utf8mb4',
+    'charset' => 'utf8',
     'options' => [
         PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
