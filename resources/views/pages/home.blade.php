@@ -8,5 +8,11 @@
 </head>
 <body>
         <h1>HOME</h1>
+
+        @if (isset($_SESSION['user']))
+
+             <p>user connected : {{$_SESSION['user']->nom}}</p>
+             <p>roll user : {{$_SESSION['user']->role}}</p>
+        @endif
 </body>
 </html>

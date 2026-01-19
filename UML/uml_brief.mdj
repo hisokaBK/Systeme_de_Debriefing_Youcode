@@ -270,8 +270,8 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 885,
-											"top": 679,
-											"width": 1079,
+											"top": 711,
+											"width": 1231,
 											"height": 13,
 											"text": "UseCaseSubject1"
 										},
@@ -308,8 +308,8 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 880,
-									"top": 672,
-									"width": 1089,
+									"top": 704,
+									"width": 1241,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGbwSPfzFyZ3NY="
@@ -438,9 +438,9 @@
 							"font": "Arial;13;0",
 							"parentStyle": false,
 							"left": 880,
-							"top": 672,
-							"width": 1088,
-							"height": 2936,
+							"top": 704,
+							"width": 1240,
+							"height": 2904,
 							"nameCompartment": {
 								"$ref": "AAAAAAGbwSPfzFyYwBQ="
 							}
@@ -15577,7 +15577,7 @@
 								"$ref": "AAAAAAGbwSYb5V9isec="
 							},
 							"lineStyle": 1,
-							"points": "1308:1127;1464:1080;1528:992;1520:880;1438:848;1326:830",
+							"points": "1308:1127;1464:1080;1528:992;1520:880;1413:824;1326:820",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGbySKiwSsX6xw="
@@ -15900,8 +15900,8 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"parentStyle": true,
-											"left": -184,
-											"top": -200,
+											"left": -136,
+											"top": -248,
 											"height": 13
 										},
 										{
@@ -15912,8 +15912,8 @@
 											},
 											"font": "Arial;13;1",
 											"parentStyle": true,
-											"left": 932.5,
-											"top": 2692,
+											"left": 956.5,
+											"top": 2668,
 											"width": 64,
 											"height": 13,
 											"text": "evaluation"
@@ -15927,8 +15927,8 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"parentStyle": true,
-											"left": -184,
-											"top": -200,
+											"left": -136,
+											"top": -248,
 											"width": 142.3271484375,
 											"height": 13,
 											"text": "(from UseCaseSubject1)"
@@ -15942,16 +15942,16 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"parentStyle": true,
-											"left": -184,
-											"top": -200,
+											"left": -136,
+											"top": -248,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": 927.5,
-									"top": 2685,
+									"left": 951.5,
+									"top": 2661,
 									"width": 74.29541015625,
 									"height": 25,
 									"stereotypeLabel": {
@@ -15979,8 +15979,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": -128,
-									"top": -72,
+									"left": -104,
+									"top": -96,
 									"width": 10,
 									"height": 10
 								},
@@ -15996,8 +15996,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": -128,
-									"top": -72,
+									"left": -104,
+									"top": -96,
 									"width": 10,
 									"height": 10
 								},
@@ -16013,8 +16013,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": -128,
-									"top": -72,
+									"left": -104,
+									"top": -96,
 									"width": 10,
 									"height": 10
 								},
@@ -16030,8 +16030,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": -128,
-									"top": -72,
+									"left": -104,
+									"top": -96,
 									"width": 10,
 									"height": 10
 								},
@@ -16047,8 +16047,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": -128,
-									"top": -72,
+									"left": -104,
+									"top": -96,
 									"width": 10,
 									"height": 10
 								}
@@ -16059,8 +16059,8 @@
 							"font": "Arial;13;0",
 							"parentStyle": false,
 							"containerChangeable": true,
-							"left": 912,
-							"top": 2680,
+							"left": 936,
+							"top": 2656,
 							"width": 105,
 							"height": 35,
 							"nameCompartment": {

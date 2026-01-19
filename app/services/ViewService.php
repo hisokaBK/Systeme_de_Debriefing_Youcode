@@ -8,7 +8,6 @@
 
         public static function instBlade() : void{
              $conf= require __DIR__ .'/../../config/blade.php';
-
              self::$blade=new BladeOne($conf['view'],$conf['cache'],BladeOne::MODE_AUTO);
          }
 

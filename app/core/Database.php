@@ -17,7 +17,7 @@ class Database
     public static function getInstance(): PDO
     {
         if (self::$instance === null) {
-            $config = require '../config/database.php';
+            $config = require_once __DIR__ . '/../../config/database.php';
         
             $host = $config['host'];
             $port = $config['port'] ;
