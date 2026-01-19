@@ -16,14 +16,16 @@ class Utilisateur
     private string $updatedAt ;
 
     public function __construct(
+        string $id,
         string $prenom,
         string $nom,
         string $email,
         string $photo,
-        string $motDePasse,
         string $role,
+        string $motDePasse,
         bool $actif = true
     ) {
+        $this->id = $id ;
         $this->prenom      = $prenom;
         $this->nom         = $nom;
         $this->email       = $email;
