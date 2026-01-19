@@ -18,7 +18,6 @@
         <h1>HOME</h1>
 
         @if (isset($_SESSION['user']))
-
              <p>user connected : {{$user->nom}} - {{ $user->prenom }}</p>
              <p>roll user : {{$user->role}}</p>
         @endif

@@ -3,7 +3,7 @@
   use app\core\Controller;
   use app\core\Database;
   use app\models\Admin;
-
+  use app\Http\middlewares\ActifMiddleware;
 
   class AuthController extends Controller{
       public function view($v='login',$data=['title' => 'Login']){
@@ -21,23 +21,23 @@
               exit();
           }
           $stmt = $conn->prepare("
-              SELECT id , mot_de_passe , email
+              SELECT id , mot_de_passe , email ,actif
               FROM utilisateurs
               WHERE email = ?
           ");
-          
+
           $stmt->execute([$email]);
           $user = $stmt->fetch();
+          ActifMiddleware::isActif($user['actif']);
   
           if ($user && (password_verify($password, $user['mot_de_passe']) || ($user['mot_de_passe'] == $password)))
           {
-            $_SESSION['user']=$user['id'];
-            header('Location: /');
-            exit; 
+              $_SESSION['user']=['id'=>$user['id'],'actif'=>$user['actif']];
+              header('Location: /');
+              exit;
           }
-  
-            $_SESSION['error'] ="Email ou mot de passe incorrect";
-            header('Location: /login');
-            exit(); 
+              $_SESSION['error'] ="Email ou mot de passe incorrect";
+              header('Location: /login');
+              exit(); 
        }
   }

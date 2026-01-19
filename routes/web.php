@@ -16,3 +16,4 @@ $router->get('/dashboard_admin', "AdminController@view");
 $router->dispatch();
 
 if(isset($_SESSION['error']))unset($_SESSION['error']);
+if(isset($_SESSION['error_role']))unset($_SESSION['error_role']);

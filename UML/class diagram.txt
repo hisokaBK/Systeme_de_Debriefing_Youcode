@@ -15,22 +15,34 @@ enum NiveauMaitrise {
   TRANSPOSER
 }
 
+enum TypeBrief {
+  INDIVIDUEL
+  COLLECTIF
+}
+
 ' ================= UTILISATEURS =================
 abstract class Utilisateur {
   - id : int
+  - prenom : string
   - nom : string
   - email : string
+  - photo : string
   - motDePasse : string
   - role : Role
   - actif : boolean
   - createdAt : datetime
+  - updatedAt : datetime
 
   + seConnecter()
   + seDeconnecter()
 }
 
 class Admin
-class Teacher
+
+class Teacher {
+  - specialite : string
+}
+
 class Apprenant {
   - matricule : string
 }
@@ -59,13 +71,22 @@ class Brief {
   - titre : string
   - description : text
   - dureeEstimee : int
-  - type : string  <<individuel / collectif>>
+  - type : TypeBrief
 }
 
 class Competence {
   - id : int
   - code : string
   - libelle : string
+}
+
+' ================= ASSOCIATIONS =================
+class ClasseTeacher {
+  - id : int
+}
+
+class BriefCompetence {
+  - id : int
 }
 
 ' ================= DEBRIEFING =================
@@ -79,15 +100,16 @@ class Evaluation {
 ' ================= RELATIONS =================
 Classe "1" --> "0..*" Sprint : contient
 Sprint "1" --> "1..*" Brief : organise
-Brief "*" --> "*" Competence : cible
 
 Classe "1" --> "0..*" Apprenant : accueille
-Classe "1" --> "0..*" Teacher : encadrée par
+Classe "1" --> "0..*" ClasseTeacher
+Teacher "1" --> "0..*" ClasseTeacher
+
+Brief "1" --> "0..*" BriefCompetence
+Competence "1" --> "0..*" BriefCompetence
 
 Apprenant "1" --> "0..*" Evaluation : reçoit
 Teacher "1" --> "0..*" Evaluation : réalise
-
-Brief "1" --> "0..*" Evaluation : évalué par
-Competence "1" --> "0..*" Evaluation : évaluée dans
-
+Brief "1" --> "0..*" Evaluation : évalué
+Competence "1" --> "0..*" Evaluation : concernée
 @enduml

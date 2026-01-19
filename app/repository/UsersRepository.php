@@ -11,7 +11,7 @@ class UsersRepository{
           $userDAO_instns=new UsersDAO() ;
           $user = $userDAO_instns->getUser($id);
 
-           switch($user->role){
+           switch($user['role']){
                 case 'ADMIN':
                    $user = new Admin($user['id'],$user['prenom'],$user['nom'],$user['email'],$user['photo'],$user['role'],$user['mot_de_passe'],$user['actif'],$user['created_at'],$user['updated_at']);
                    break ;

@@ -7,5 +7,8 @@
 </head>
 <body>
           <h1>404</h1>
+          @if (isset($_SESSION['blocked']))
+                 <p>{{$_SESSION['blocked']}}</p>
+          @endif
 </body>
 </html>
