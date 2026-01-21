@@ -5,12 +5,12 @@
 
  use app\core\Controller;
 
- class formAddUserController extends Controller{
+ class FormAddUserController extends Controller{
 
         private RoleMiddleware $check_role;
         private AuthMiddleware $is_auth;
 
-       public function view($v='partials.formAddUser',$data=[]){
+       public function view($v='partials.formAddUser',$data=["title"=>'form add user']){
                $this->is_auth = new AuthMiddleware();
                $this->check_role = new RoleMiddleware($this->is_auth);
 

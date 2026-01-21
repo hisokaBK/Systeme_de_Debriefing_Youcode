@@ -1,4 +1,7 @@
 @extends('layouts.admin_base')
+@section('title')
+      {{$title}}
+@endsection
 @section('content')
 <div class="max-w-6xl mx-auto flex flex-col gap-6">
 <div class="flex flex-wrap justify-between items-end gap-3 px-4">
@@ -38,7 +41,7 @@
 </td>
 <td class="px-6 py-4 text-[#606e8a] text-sm">{{$user->email}}</td>
 <td class="px-6 py-4">
-<span class="inline-flex items-center px-3 py-1 rounded-full @if($user->role=='ADMIN')bg-blue-100 text-primary @elseif($user->role=='Teacher') bg-emerald-100 text-emerald-600 @else bg-amber-100 text-amber-600 @endif  text-xs font-bold">{{$user->role}}</span>
+<span class="inline-flex items-center px-3 py-1 rounded-full @if($user->role=='ADMIN')bg-blue-100 text-primary @elseif($user->role=='TEACHER') bg-emerald-100 text-emerald-600 @else bg-amber-100 text-amber-600 @endif  text-xs font-bold">{{$user->role}}</span>
 </td>
 <td class="px-6 py-4 text-center">
 <div class="flex justify-center gap-2">

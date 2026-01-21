@@ -1,4 +1,8 @@
 @extends('layouts.admin_base')
+@section('title')
+      {{$title}}
+@endsection
+    
 @section('content')
 <div>
 <h2 class="text-2xl font-bold tracking-tight">System Overview</h2>

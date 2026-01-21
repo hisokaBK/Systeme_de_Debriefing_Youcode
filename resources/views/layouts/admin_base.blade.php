@@ -2,7 +2,7 @@
 <html class="light" lang="en"><head>
    <meta charset="utf-8"/>
    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-   <title>Admin Dashboard - Pedagogical Management</title>
+   <title>@yield('title')</title>
    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -68,15 +68,15 @@
    <span class="material-symbols-outlined">group</span>
    <span class="text-sm font-medium">Users</span>
    </a>
-   <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 dark:text-gray-400  {{$_SERVER['REDIRECT_URL'] == '/Classes'?'active-nav' : ' hover:bg-gray-200 dark:hover:bg-gray-800'}} transition-colors" href="/Classes">
+   <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 dark:text-gray-400  {{$_SERVER['REDIRECT_URL'] == '/admin_classes'?'active-nav' : ' hover:bg-gray-200 dark:hover:bg-gray-800'}} transition-colors" href="/admin_classes">
    <span class="material-symbols-outlined">class</span>
    <span class="text-sm font-medium">Classes</span>
    </a>
-   <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 dark:text-gray-400  {{$_SERVER['REDIRECT_URL'] == '/Sprints'?'active-nav' : ' hover:bg-gray-200 dark:hover:bg-gray-800'}} transition-colors" href="/Sprints">
+   <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 dark:text-gray-400  {{$_SERVER['REDIRECT_URL'] == '/admin_sprints'?'active-nav' : ' hover:bg-gray-200 dark:hover:bg-gray-800'}} transition-colors" href="/admin_sprints">
    <span class="material-symbols-outlined">rocket_launch</span>
    <span class="text-sm font-medium">Sprints</span>
    </a>
-   <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 dark:text-gray-400  {{$_SERVER['REDIRECT_URL'] == '/Competencies'?'active-nav' : ' hover:bg-gray-200 dark:hover:bg-gray-800'}} transition-colors" href="/Competencies">
+   <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 dark:text-gray-400  {{$_SERVER['REDIRECT_URL'] == '/admin_competencies'?'active-nav' : ' hover:bg-gray-200 dark:hover:bg-gray-800'}} transition-colors" href="/admin_competencies">
    <span class="material-symbols-outlined">psychology</span>
    <span class="text-sm font-medium">Competencies</span>
    </a>
@@ -112,17 +112,17 @@
         @case('/Classes')
             Classes
             @break
-        @case('/Competencies')
+        @case('/admin_competencies')
             Competencies
-            @break
-        @case('/Classes')
-            Classes
-            @break
-        @case('/Statistics')
-            Statistics
+            @break            
+        @case('/admin_sprints')
+              Sprints
             @break
         @case('/admin_users')
-            Users
+              Users
+            @break
+        @case('/admin_classes')
+              Classes
             @break
         @default
             Dashboard

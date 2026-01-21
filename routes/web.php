@@ -16,9 +16,18 @@ $router->get('/logout', "AuthController@logout");
 $router->get('/dashboard_admin', "AdminController@view");
 
 $router->get('/admin_users', "UserController@view");
+$router->get('/formAddUser', "FormAddUserController@view");
 $router->post('/addUser', "UserController@addUser");
 
-$router->get('/formAddUser', "formAddUserController@view");
+$router->get('/formAddSprint', "FormAddSprintController@view");
+$router->get('/admin_sprints', "SprintController@view");
+$router->post('/addSprint', "SprintController@addSprint");
+
+$router->get('/admin_classes', "ClassesController@view");
+$router->get('/formAddClass', "FormAddClassesController@view");
+
+$router->get('/admin_competencies', "CompetenciesController@view");
+$router->get('/formAddCompetencies', "FormAddCompetenciesController@view");
 
 $router->dispatch();
 

@@ -25,7 +25,7 @@ class Database
             $user = $config['user'];
             $password = $config['pass'];
 
-            $dsn = "pgsql:host=$host;port=$port;dbname=$dbname";
+            $dsn = "pgsql:host= $host;port=$port;dbname=$dbname";
 
             try {
                 self::$instance = new PDO($dsn, $user, $password,$config['options']);
