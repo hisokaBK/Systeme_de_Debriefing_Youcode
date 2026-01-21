@@ -23,7 +23,7 @@ class Utilisateur
         string $photo,
         string $role,
         string $motDePasse,
-        bool $actif = true
+        bool $actif
     ) {
         $this->id = $id ;
         $this->prenom      = $prenom;

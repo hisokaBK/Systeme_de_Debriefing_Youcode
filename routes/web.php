@@ -11,7 +11,14 @@ $router->get('/404', "NotFondController@view");
 $router->get('/login', "AuthController@view");
 $router->post('/login_check', "AuthController@login");
 
+$router->get('/logout', "AuthController@logout");
+
 $router->get('/dashboard_admin', "AdminController@view");
+
+$router->get('/admin_users', "UserController@view");
+$router->post('/addUser', "UserController@addUser");
+
+$router->get('/formAddUser', "formAddUserController@view");
 
 $router->dispatch();
 

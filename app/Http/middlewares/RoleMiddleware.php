@@ -12,11 +12,11 @@
 
        public function checkUser(string $role){
                   if(!$this->auth->auth()){
-                        header("Location: /");
+                        header("Location: /login");
                         exit;
                   }
 
-                  if(!$_SESSION['user']->role == $role){
+                  if(!$_SESSION['user']['role'] == $role){
                         $_SESSION['error_role'] = "Access denied! You don't have permission.";
                         header("Location: /");
                         exit;
