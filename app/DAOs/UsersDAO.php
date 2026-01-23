@@ -50,8 +50,8 @@ class UsersDAO{
 
     public function getUserByRole($role){
               $conx=Database::getInstance();
-              $prepare = $conx->prepare("SELECT * FROM utilisateurs WHERE  role = ? ");
-              $prepare->execute([$role]);
+              $prepare = $conx->prepare("SELECT * FROM utilisateurs WHERE  role = ?  and asgn_to_class = ? ");
+              $prepare->execute([$role , 0]);
               $user = $prepare->fetchAll();
 
               return $user ;

@@ -66,7 +66,7 @@ class UserController extends Controller{
                 $this->dao=new UsersDAO() ;
                 $this->dao->addNewUser($user);
 
-                header('Location: /');
+                header('Location: /admin_users');
                 exit;
        }
 

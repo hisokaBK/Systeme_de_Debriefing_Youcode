@@ -150,7 +150,7 @@
 </div>
 </div>
 <div class="p-6 md:p-8">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div class="grid grid-cols-1 gap-8">
 <!-- Left side: Available -->
 <div class="flex flex-col gap-4">
 <div class="flex items-center justify-between">
@@ -186,47 +186,7 @@
 </div>
 </div>
 
-<div class="flex flex-col gap-4">
-<div class="flex items-center justify-between">
-<h4 class="font-bold text-primary">Enrolled Students</h4>
-<button class="text-xs text-red-500 font-semibold hover:underline">Remove All</button>
-</div>
-<div class="h-[312px] overflow-y-auto border border-primary/20 rounded-lg p-2 space-y-1 bg-primary/5">
 
-<div class="flex items-center justify-between p-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-sm">
-<div class="flex items-center gap-3">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8" data-alt="Student headshot" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA8bedqKwETPIh70k8l7Mx4wRkTU2asqdFYVWUdJjlXKZ_553YRp6nozEUYupPs3AcMrkSb3YX95RWwKnGdBm9Y7OVmfClLbE2fWPWQScCpN0VO-O8PhuFytnsYTdvrucE9xcM-d3SW5qDQ33cGmmzus1SW4QZC-RUOeoHxZ76183ZXbRcarAFDW3k2xzE4btjMljARZTUyzJc8DNTOy-JQJMDWMzYymM1eXvppepR-rqZVBe5McaraCclKl8IUW8zYWxW3FE7YnA");'></div>
-<span class="text-sm font-medium">Jordan Blake</span>
-</div>
-<button class="text-gray-400 hover:text-red-500 transition-colors">
-<span class="material-symbols-outlined">do_not_disturb_on</span>
-</button>
-</div>
-<div class="flex items-center justify-between p-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-sm">
-<div class="flex items-center gap-3">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8" data-alt="Student headshot" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDS6OT4FWb0IPn9zx-Ku0qAiyv95frd4SUYRWblZ0VjmlBNBpKclp-Kbq59nR5AXVLm7vWur4Hjrv3lBLVPsVwUdvD2Q0clYp-IRlfuRNKOCjRn4-tTuJZSEGwU00BIsaWUwagLPPnyme6m6PMmrMFh56XsXv2LF98NnUI1m-qhUk1_ZJzZa_TgYukfna8_4vvmfMBnzfeuIDloCjy35u-2KvC-Yc0e5AukkJBQcnGhKxdt-CQxoNl91iJjbSNMOnWVGpB1eDwP7A");'></div>
-<span class="text-sm font-medium">Sophia Chen</span>
-</div>
-<button class="text-gray-400 hover:text-red-500 transition-colors">
-<span class="material-symbols-outlined">do_not_disturb_on</span>
-</button>
-</div>
-<div class="flex items-center justify-between p-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-sm">
-<div class="flex items-center gap-3">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8" data-alt="Student headshot" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBzb-IgXdHch4Q9OaPHSHo5m4udHsHyQa6nKI9cewNOO80Iejicb_iOOJgxXQU_Mk07yyHQTMnKt6EGk0ahJHMsdZe-UT5ym2_IndeVJ4gDSpDcLnOKyNxE1J-ERbedIOJhjJZwlUMCs8vg14J1pgkgiY7A0CwmaNNQ_pGrjZ6MpiWQn-kACNzhASvEs69z6w7l5hFI5oTwup27Qs8p019g-KVG6QvCXMRx2ctF9PTRd89j2a8d2HtnUidyr3KJJGTdV6PolA0LJg");'></div>
-<span class="text-sm font-medium">Tariq Ahmed</span>
-</div>
-<button class="text-gray-400 hover:text-red-500 transition-colors">
-<span class="material-symbols-outlined">do_not_disturb_on</span>
-</button>
-</div>
-<!-- Empty prompt if needed (hidden for this visual) -->
-<div class="hidden flex flex-col items-center justify-center h-full text-center p-8">
-<span class="material-symbols-outlined text-4xl text-gray-300">group</span>
-<p class="text-gray-400 text-sm mt-2">No students enrolled yet. Select from the available list.</p>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>

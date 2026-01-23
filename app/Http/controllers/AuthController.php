@@ -44,7 +44,6 @@
                     default :
                        header('Location: /');
                         exit;
-                      
               }
               
           }
