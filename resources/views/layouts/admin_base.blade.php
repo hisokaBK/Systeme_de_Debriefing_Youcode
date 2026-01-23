@@ -52,7 +52,7 @@
    <aside class="w-64 bg-secondary-light dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 flex flex-col">
    <div class="p-6 flex items-center gap-3">
    <div class="bg-primary rounded-lg p-2 flex items-center justify-center text-white">
-   <span class="material-symbols-outlined">school</span>
+<span class="material-symbols-outlined">admin_panel_settings</span>
    </div>
    <div>
    <h1 class="text-base font-bold leading-tight">Admin Panel</h1>
@@ -87,9 +87,9 @@
    </nav>
    <div class="p-4 border-t border-gray-200 dark:border-gray-800">
    <div class="flex items-center gap-3 p-2">
-   <div class="w-10 h-10 rounded-full bg-cover bg-center" data-alt="Admin user profile headshot" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBWpabHRTUwS7R6wjv-RdCf9ZPdz1l3dNiX2wfCj4G7a443PkVPcEBFDKQ7UE3TWS9gQh9xaNgU3Ytfc9OwFaSqMz19ugUkGbdmLujMZWZ4qfQV50cRdJKu6WuirE2AkAQe1MDMc6TmNrkchA8s5p3bDT_4IEtervAy5we46M0e7nPQAkFI0oSby_0Y7kZB5uZnGW7PDXCD7qju4T_8OqgRYFQwPaXb8ETQ-R_eirfSd04b-0H26X1o2o5qSbQQvafKvh_MzKi5Qg');"></div>
+   <div class="w-10 h-10 rounded-full bg-cover bg-center" data-alt="Admin user profile headshot" style="background-image: url('../../assets/images/users/{{$_SESSION['user']['photo']}}');"></div>
    <div class="flex-1 overflow-hidden">
-   <p class="text-sm font-semibold truncate">Alex Rivera</p>
+   <p class="text-sm font-semibold truncate">{{$_SESSION['user']['prenom']}} {{$_SESSION['user']['nom']}}</p>
    <p class="text-xs text-gray-500 truncate">System Admin</p>
    </div>
    <a href="/logout" class="text-gray-400 hover:text-gray-600">

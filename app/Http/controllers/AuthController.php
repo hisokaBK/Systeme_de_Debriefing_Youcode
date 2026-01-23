@@ -21,7 +21,7 @@
               exit();
           }
           $stmt = $conn->prepare("
-              SELECT id , mot_de_passe , email ,actif ,role
+              SELECT *
               FROM utilisateurs
               WHERE email = ?
           ");
@@ -33,9 +33,20 @@
   
           if ($user && (password_verify($password, $user['mot_de_passe']) || ($user['mot_de_passe'] == $password)))
           {
-              $_SESSION['user']=['id'=>$user['id'],'role'=>$user['role'],'actif'=>$user['actif']];
-              header('Location: /');
-              exit;
+              $_SESSION['user']=['id'=>$user['id'],'role'=>$user['role'],'actif'=>$user['actif'],'photo'=>$user['photo'],'prenom'=>$user['prenom'] , 'nom'=>$user['nom'] ];
+              switch($user['role']){
+                    case 'ADMIN';
+                        header('Location: /dashboard_admin');
+                         exit;
+                    case 'TEACHER';
+                        header('Location: /');
+                        exit;
+                    default :
+                       header('Location: /');
+                        exit;
+                      
+              }
+              
           }
               $_SESSION['error'] ="Email ou mot de passe incorrect";
               header('Location: /login');

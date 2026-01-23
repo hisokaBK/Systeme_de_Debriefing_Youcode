@@ -10,5 +10,6 @@
               <a class="hover:text-primary transition-colors underline pb-1" href="#">Terms</a>
               <a class="hover:text-primary transition-colors underline pb-1" href="#">GitHub</a>
        </div>
-       <p class="text-slate-500 dark:text-gray-500 text-sm">© 2026 Internal Blog . YouCode </p>
+       <p class="text-slate-500 dark:text-gray-500 text-sm">        © 2026 bilal bakessou
+</p>
 </footer>

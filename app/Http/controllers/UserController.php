@@ -33,11 +33,32 @@ class UserController extends Controller{
                $this->check_role = new RoleMiddleware($this->is_auth);
                $this->check_role->checkUser("ADMIN");
 
+                   if (!isset($_FILES['photo']) || $_FILES['photo']['error'] !== 0) {
+                        $_SESSION['error'] = "Image obligatoire";
+                        header('Location: /formAddUser');
+                        exit;
+                    }
+                
+                    $imageName = time() . '_' . $_FILES['photo']['name'];
+                    $uploadDir = __DIR__ . '/../../../public/assets/images/users/';
+                    $uploadPath = $uploadDir . $imageName;
+                
+                    if (!is_dir($uploadDir)) {
+                        mkdir($uploadDir, 0777, true);
+                    }
+                
+                    if (!move_uploaded_file($_FILES['photo']['tmp_name'], $uploadPath)) {
+                        $_SESSION['error'] = "Erreur lors de l’upload de l’image";
+                        header('Location: /formAddUser');
+                        exit;
+                    }
+                
+
                $user =[
                         'prenom'=> $_POST['prenom'],
                         'nom'   => $_POST['nom'],
                         'email' => $_POST['email'],
-                        'photo' => $_POST['photo'],
+                        'photo' => $imageName,
                         'mot_de_passe'  => $_POST['mot_de_passe'],
                         'role'  => $_POST['role']
                         ];

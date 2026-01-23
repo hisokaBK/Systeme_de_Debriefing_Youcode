@@ -24,10 +24,12 @@ $router->get('/admin_sprints', "SprintController@view");
 $router->post('/addSprint', "SprintController@addSprint");
 
 $router->get('/admin_classes', "ClassesController@view");
+$router->post('/admin_classes', "ClassesController@newClasse");
 $router->get('/formAddClass', "FormAddClassesController@view");
 
 $router->get('/admin_competencies', "CompetenciesController@view");
 $router->get('/formAddCompetencies', "FormAddCompetenciesController@view");
+$router->post('/addCompetencies', "CompetenciesController@addCompetencies");
 
 $router->dispatch();
 

@@ -62,26 +62,26 @@
 <p class="text-[#606e8a] dark:text-gray-400 text-base">Définissez les standards pédagogiques pour les évaluations.</p>
 </div>
 <div class="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 overflow-hidden">
-<form class="p-8 flex flex-col gap-8">
+<form class="p-8 flex flex-col gap-8" method="POST" action="/addCompetencies">
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 <div class="md:col-span-2 flex flex-col gap-2">
 <label class="text-[#111318] dark:text-white text-sm font-semibold">Nom de la Compétence</label>
-<input class="w-full h-12 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-[#111318] dark:text-white px-4 focus:ring-2 focus:ring-primary focus:border-transparent transition-all placeholder:text-gray-400" placeholder="ex: Maîtrise de la syntaxe" type="text"/>
+<input class="w-full h-12 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-[#111318] dark:text-white px-4 focus:ring-2 focus:ring-primary focus:border-transparent transition-all placeholder:text-gray-400" placeholder="ex: Maîtrise de la syntaxe" type="text" name="nom"/>
 </div>
 <div class="flex flex-col gap-2">
 <label class="text-[#111318] dark:text-white text-sm font-semibold">Code</label>
-<input class="w-full h-12 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-[#111318] dark:text-white px-4 focus:ring-2 focus:ring-primary focus:border-transparent transition-all placeholder:text-gray-400" placeholder="ex: C1" type="text"/>
+<input class="w-full h-12 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-[#111318] dark:text-white px-4 focus:ring-2 focus:ring-primary focus:border-transparent transition-all placeholder:text-gray-400" placeholder="ex: C1" type="text" name="code"/>
 </div>
 </div>
 <div class="flex flex-col gap-2">
 <label class="text-[#111318] dark:text-white text-sm font-semibold">Description</label>
-<textarea class="w-full min-h-[160px] rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-[#111318] dark:text-white p-4 focus:ring-2 focus:ring-primary focus:border-transparent transition-all placeholder:text-gray-400 resize-none" placeholder="Décrivez les critères de réussite et le contexte pédagogique de cette compétence..."></textarea>
+<textarea class="w-full min-h-[160px] rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-[#111318] dark:text-white p-4 focus:ring-2 focus:ring-primary focus:border-transparent transition-all placeholder:text-gray-400 resize-none" placeholder="Décrivez les critères de réussite et le contexte pédagogique de cette compétence..." name="description"></textarea>
 </div>
 <!-- Action Buttons -->
 <div class="flex items-center justify-end gap-3 pt-4 border-t border-gray-100 dark:border-gray-800">
-<button class="px-6 h-12 rounded-lg border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 font-bold hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors" type="button">
+<a href="/admin_competencies" class="px-6 pt-3 h-12 rounded-lg border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 font-bold hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors items-center" type="button" >
                                     Annuler
-                                </button>
+                                </a>
 <button class="px-8 h-12 rounded-lg bg-primary text-white font-bold hover:bg-blue-700 transition-colors shadow-lg shadow-primary/20" type="submit">
                                     Enregistrer la Compétence
                                 </button>
@@ -96,7 +96,7 @@
 </div>
 </main>
 <footer class="py-6 text-center text-gray-400 text-xs">
-        © 2024 Pedagogical Platform. Tous droits réservés.
+        © 2026 bilal bakessou
     </footer>
 </body>
 </html>

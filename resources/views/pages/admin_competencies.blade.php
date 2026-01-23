@@ -32,39 +32,42 @@
 </thead>
 
 <tbody class="divide-y divide-[#f0f1f5] dark:divide-[#2d3748]">
-<tr class="hover:bg-gray-50/50 dark:hover:bg-slate-800/50 transition-colors">
-<td class="px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="size-8 rounded bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-xl">code</span>
-</div>
-<span class="font-semibold text-sm">Développement Frontend</span>
-</div>
-</td>
-<td class="px-6 py-4">
-<span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400">C1</span>
-</td>
-<td class="px-6 py-4">
-<p class="text-sm text-[#606e8a] dark:text-[#94a3b8] max-w-xs truncate">Maîtrise de HTML5, CSS3, JavaScript et les frameworks modernes...</p>
-</td>
-<td class="px-6 py-4 text-right">
-<div class="flex items-center justify-end gap-2">
-<button class="flex items-center gap-1.5 px-3 py-1.5 bg-primary text-white text-xs font-bold rounded-lg hover:bg-primary/90 transition-all">
-<span class="material-symbols-outlined text-base">edit</span>
-                                        Modifier
-                                    </button>
-<button class="flex items-center gap-1.5 px-3 py-1.5 bg-red-500 text-white text-xs font-bold rounded-lg hover:bg-red-600 transition-all">
-<span class="material-symbols-outlined text-base">delete</span>
-                                        Supprimer
-                                    </button>
-</div>
-</td>
-</tr>
+
+@foreach ($competences as $competence)
+     <tr class="hover:bg-gray-50/50 dark:hover:bg-slate-800/50 transition-colors">
+     <td class="px-6 py-4">
+     <div class="flex items-center gap-3">
+     <div class="size-8 rounded bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-primary">
+     <span class="material-symbols-outlined text-xl">code</span>
+     </div>
+     <span class="font-semibold text-sm">{{$competence->nom}}</span>
+     </div>
+     </td>
+     <td class="px-6 py-4">
+     <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400">{{$competence->code}}</span>
+     </td>
+     <td class="px-6 py-4">
+     <p class="text-sm text-[#606e8a] dark:text-[#94a3b8] max-w-xs truncate">{{$competence->description}}</p>
+     </td>
+     <td class="px-6 py-4 text-right">
+     <div class="flex items-center justify-end gap-2">
+     <button class="flex items-center gap-1.5 px-3 py-1.5 bg-primary text-white text-xs font-bold rounded-lg hover:bg-primary/90 transition-all">
+     <span class="material-symbols-outlined text-base">edit</span>
+                                             Modifier
+                                         </button>
+     <button class="flex items-center gap-1.5 px-3 py-1.5 bg-red-500 text-white text-xs font-bold rounded-lg hover:bg-red-600 transition-all">
+     <span class="material-symbols-outlined text-base">delete</span>
+                                             Supprimer
+                                         </button>
+     </div>
+     </td>
+  </tr>
+@endforeach
 </tbody>
 </table>
 </div>
 <div class="mt-8 flex items-center justify-between">
-<p class="text-sm text-[#606e8a] dark:text-[#94a3b8]">Number compétences  1</p>
+<p class="text-sm text-[#606e8a] dark:text-[#94a3b8]">Number compétences  {{$num_competences}}</p>
 </div>
 </div>
 @endsection

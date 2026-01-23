@@ -62,7 +62,7 @@
 <h1 class="text-text-main dark:text-white text-[32px] font-bold leading-tight tracking-tight pb-2">Inscription Utilisateur</h1>
 <p class="text-gray-500 dark:text-gray-400 text-base">Créez votre compte pour accéder à la plateforme pédagogique.</p>
 </div>
-<form class="p-8 space-y-6" action="/addUser" method="POST">
+<form class="p-8 space-y-6" action="/addUser" method="POST" enctype="multipart/form-data">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 <label class="flex flex-col gap-2">
 <span class="text-text-main dark:text-gray-300 text-base font-medium">Prénom</span>
@@ -132,6 +132,6 @@
 </div>
 </main>
 <footer class="py-6 text-center text-gray-400 text-xs">
-        © 2024 Pedagogical Platform. Tous droits réservés.
+        © 2026 bilal bakessou
     </footer>
 </body></html>

@@ -55,4 +55,35 @@ class UsersRepository{
    }
         return $listUsers ;
  }
+
+
+public function getUsersByRole($role){
+          $userDAO_instns2=new UsersDAO() ;
+          $users = $userDAO_instns2->getUserByRole($role);
+
+          $listUsers=[];
+          foreach($users as $user){
+             switch($role){
+                case 'ADMIN':
+                   $userx = new Admin($user['id'],$user['prenom'],$user['nom'],$user['email'],$user['photo'],$user['role'],$user['mot_de_passe'],$user['actif'],$user['created_at'],$user['updated_at']);
+                  $listUsers=[...$listUsers,$userx];
+
+                   break ;
+
+                case 'TEACHER':
+                    $userx = new Teacher($user['id'],$user['prenom'],$user['nom'],$user['email'],$user['photo'],$user['role'],$user['mot_de_passe'],$user['actif'],$user['created_at'],$user['updated_at']);
+                    $listUsers=[...$listUsers,$userx];
+                    break ;
+
+                default :
+                    $userx = new Apprenant($user['id'],$user['prenom'],$user['nom'],$user['email'],$user['photo'],$user['role'],$user['mot_de_passe'],$user['actif'],$user['created_at'],$user['updated_at']);
+                   $listUsers=[...$listUsers,$userx];
+
+             }
+
+   }
+        return $listUsers ;
+ }
+
+
 }

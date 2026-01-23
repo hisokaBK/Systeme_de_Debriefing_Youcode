@@ -163,7 +163,7 @@
 </div>
 </main>
 <footer class="py-6 text-center text-gray-400 text-xs">
-        © 2024 Pedagogical Platform. Tous droits réservés.
+        © 2026 bilal bakessou
     </footer>
 </body>
 </html>
