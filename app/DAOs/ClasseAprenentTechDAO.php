@@ -37,6 +37,30 @@ class ClasseAprenentTechDAO{
             $prepare_classes->execute($classes);
     }
 
+    public function getclasseView(){
+            $conx=Database::getInstance();
+            $prepare_classes=$conx->prepare("
+                     SELECT c.id , c.nom as class ,c.photo ,u.prenom, u.nom  
+                     from classes c
+                     join classeAprenentTech cat on c.id = cat.classe_id
+	                 join utilisateurs u on u.id = cat.teacher_id 
+                     group by c.id , c.nom,c.photo,u.prenom, u.nom ;
+              ");
+
+             $prepare_classes->execute();
+             $data = $prepare_classes->fetchAll();
+             return $data;
+     }
+
+     public function getClasseByName($classe_id){
+              $conx=Database::getInstance();
+              $prepare = $conx->prepare("SELECT count(*) from classeAprenentTech where classe_id = ? ");
+              $prepare->execute([$classe_id]);
+              $classe = $prepare->fetch();
+
+              return $classe ;
+      }
+
 
      
 }

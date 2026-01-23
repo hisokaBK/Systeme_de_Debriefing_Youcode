@@ -35,7 +35,7 @@
 <tr class="hover:bg-gray-50/80 dark:hover:bg-gray-800/40 transition-colors">
 <td class="px-6 py-4 whitespace-nowrap">
 <div class="flex items-center gap-3">
-<div class="size-9 rounded-full bg-blue-100 flex items-center justify-center text-primary font-bold text-sm">AJ</div>
+<div class="size-9 rounded-full bg-blue-100 flex items-center justify-center text-primary font-bold text-sm overflow-hidden"><img src="../../assets/images/users/{{$user->photo}}" alt=""></div>
 <span class="text-[#111318] dark:text-white text-sm font-medium">{{$user->prenom}} {{$user->nom}}</span>
 </div>
 </td>

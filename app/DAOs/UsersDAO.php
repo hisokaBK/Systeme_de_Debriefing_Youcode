@@ -30,6 +30,15 @@ class UsersDAO{
               return $num ;
     }
 
+    public function countUsersInClass($class_name){
+              $conx=Database::getInstance();
+              $prepare = $conx->prepare("SELECT count(*) as num FROM utilisateurs where nom = ? ");
+              $prepare->execute($class_name);
+              $usersNumber = $prepare->fetch();
+              $num =  $usersNumber['num'];
+              return $num ;
+    }
+
     public function addNewUser($user){
             $conx=Database::getInstance();
             

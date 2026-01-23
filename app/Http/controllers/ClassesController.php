@@ -16,11 +16,25 @@
         private ClasseDAO $daoClasseDAO;
         private ClasseAprenentTechDAO $daoClasseAprenentTechDAO;
 
-       public function view($v='pages.admin_classes',$data=['title'=>'Classes']){
+       public function view($v='pages.admin_classes',$data=[]){
                $this->is_auth = new AuthMiddleware();
                $this->check_role = new RoleMiddleware($this->is_auth);
 
                $this->check_role->checkUser("ADMIN");
+
+               $this->daoClasseAprenentTechDAO = new ClasseAprenentTechDAO();
+               $classes = $this->daoClasseAprenentTechDAO->getclasseView();
+               $number_user_class =[];
+               foreach($classes as $class){
+                      $count = $this->daoClasseAprenentTechDAO->getClasseByName($class['id']);
+                      $number_user_class=[...$number_user_class,$count];
+               }
+               $data=[
+                 'title'=>'Classes',
+                 'classes'=>$classes,
+                 'number_user_class'=>$number_user_class
+               ];
+
                parent::view($v,$data);
        }
 
